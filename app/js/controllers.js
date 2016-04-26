@@ -5,7 +5,7 @@ appControllers.controller('mainController', ['$scope','$http',
         window.sc = $scope;
         $scope.dummyUrl = "https://google.com";
     
-        $http.get('https://api.myjson.com/bins/4g62s').success(function (data) {
+        $http.get('data.json').success(function (data) {
             //Read model from json data
             $scope.coverImage = data.coverImg;
             $scope.profileImage = data.profileImg;
