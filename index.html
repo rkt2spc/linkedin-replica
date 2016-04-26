@@ -31,19 +31,31 @@
                         <div class="overview-info row">
                             <!--OVERVIEW TOP SECTION > LEFT PART-->
                             <div style="display: inline-block; float: left;">
-                                <h1 class="overview-name">{{name[0] + ' ' + name[1]}}</h1>
-                                <p class="overview-headline">{{headline}}</p>
-                                <p class="overview-demographics">
-                                    <a href="https://www.linkedin.com/vsearch/p?f_G={{workInfo.area}}&trk=prof-0-ovw-location">{{workInfo.area}}</a> |
-                                    <a href="https://www.linkedin.com/vsearch/p?f_I={{workInfo.industry}}&trk=prof-0-ovw-industry">{{workInfo.industry}}</a>
-                                </p>
+                                <div>
+                                    <h1 class="overview-name">{{name[0] + ' ' + name[1]}}</h1>
+                                    <a class="overlay-button edit-button" style="height: 28px; width: 28px;"></a>
+                                </div>
+
+                                <div style="padding: 5px 0px;">
+                                    <p class="overview-headline">{{headline}}</p>
+                                    <a class="overlay-button edit-button" style="height: 24px; width: 24px;"></a>
+                                </div>
+                                <div>
+                                    <p class="overview-demographics">
+                                        <a href="https://www.linkedin.com/vsearch/p?f_G={{workInfo.area}}&trk=prof-0-ovw-location">{{workInfo.area}}</a>                                        |
+                                        <a href="https://www.linkedin.com/vsearch/p?f_I={{workInfo.industry}}&trk=prof-0-ovw-industry">{{workInfo.industry}}</a>
+                                    </p>
+                                    <i class="overlay-button edit-button" style="height: 19px; width: 19px; padding: 2px;"></i>
+                                </div>
+
                                 <table class="overview-summary">
                                     <tr>
                                         <th scope="row"><a href="">Current</a></th>
                                         <td>
                                             <a ng-repeat="exp in experience | filter: {endPeriod: 'Present'} | limitTo: 3">
-                                                {{exp.companyName}}<span ng-show="!$last">, </span>
-                                            </a>
+                                                    {{exp.companyName}}<span ng-show="!$last">, </span>
+                                                </a>
+                                            <a class="overlay-button edit-button" style="height: 17px; width: 17px; padding: 2px;" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -52,12 +64,14 @@
                                             <a ng-repeat="exp in experience | filter: {endPeriod: '!Present'} | limitTo: 3">
                                                 {{exp.companyName}}<span ng-show="!$last">, </span>
                                             </a>
+                                            <a class="overlay-button edit-button" style="height: 17px; width: 17px; padding: 2px;" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><a href="">Education</a></th>
                                         <td>
                                             <a ng-repeat="edu in education | limitTo: 1">{{edu.name}}</a>
+                                            <a class="overlay-button edit-button" style="height: 17px; width: 17px; padding: 2px;" />
                                         </td>
                                     </tr>
                                 </table>
@@ -136,7 +150,10 @@
                         <h2 class="card-title">Background</h2>
                         <div id="background-content" class="card-content">
                             <!--SUMMARY SECTION-->
-                            <div class="background-section">
+                            <div class="section-container background-section">
+                                <div class="edit-section">
+                                    <a class="overlay-button edit-button"></a>
+                                </div>
                                 <div class="valign-wrapper background-section-header">
                                     <img src=".\images\commons\header-summary.png" class="valign" />
                                     <h3 class="valign">Summary</h3>
@@ -144,16 +161,22 @@
                                 <p class="description">{{summary}}</p>
                             </div>
                             <!--EXPERIENCE SECTION-->
-                            <div class="background-section">
+                            <div class="section-container background-section">
+                                <div class="edit-section">
+                                    <a class="overlay-button add-button"></a>
+                                </div>
                                 <div class="valign-wrapper background-section-header">
                                     <img src=".\images\commons\header-experience.png" class="valign" />
                                     <h3 class="valign">Experience</h3>
                                 </div>
                                 <div ng-repeat="exp in experience">
-                                    <div class="row info-bar">
+                                    <div class="section-container row info-bar">
+                                        <div class="edit-section" style="padding-top: 20px">
+                                            <a class="overlay-button edit-button" style="height: 24px; width: 24px;"></a><!--
+                                         --><a class="overlay-button remove-button" style="height: 24px; width: 24px;"></a>
+                                        </div>
                                         <div style="display: inline-block">
-                                            <a href="https://www.linkedin.com/title/{{exp.title}}?trk=mprofile_title"
-                                                title="Learn more about this title" class="info-title">{{exp.title}}</a>
+                                            <a href="https://www.linkedin.com/title/{{exp.title}}?trk=mprofile_title" title="Learn more about this title" class="info-title">{{exp.title}}</a>
                                             <a href="{{exp.companyUrl}}" class="info-subtitle">{{exp.companyName}}</a>
                                             <span class="info-date">{{exp.startPeriod}} – {{exp.endPeriod}}
                                                 <span ng-show="exp.duration != ''">({{exp.duration}})</span>
@@ -162,8 +185,8 @@
                                         </div>
                                         <div class="info-logo" ng-show="exp.companyLogo != ''">
                                             <a href="{{exp.companyUrl}}">
-                                               <img src="{{exp.companyLogo}}" /> 
-                                            </a>                                    
+                                                <img src="{{exp.companyLogo}}" />
+                                            </a>
                                         </div>
                                     </div>
                                     <p class="description">{{exp.description}}</p>
@@ -176,22 +199,36 @@
                                     <h3 class="valign">Volunteer Experience & Causes</h3>
                                 </div>
                                 <div id="background-volunteerexp">
-                                    <h4>Causes {{name[0]}} cares about</h4>
-                                    <ul class="browser-default">
-                                        <li ng-repeat="c in caredCauses">{{c}}</li>
-                                    </ul>
-                                    <h4>Organizations {{name[0]}} supports</h4>
-                                    <ul class="browser-default" style="margin-bottom: 0px !important;">
-                                        <li ng-repeat="org in supportedOrganizations">
-                                            <a href="https://www.linkedin.com/vsearch/p?company={{org}}&trk=prof-vol_interests-orgs-link">
-                                                {{org}}
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div class="section-container">
+                                        <a class="overlay-button add-button edit-section"></a>
+                                        <h4>Causes {{name[0]}} cares about</h4>
+                                        <ul class="browser-default">
+                                            <li ng-repeat="c in caredCauses">
+                                                <span>{{c}}</span><!-- 
+                                                --><a class="overlay-button remove-button" style="margin-left: 4px; height: 16px; width: 16px;"></a>
+                                            </li>
+                                        </ul> 
+                                    </div>
+                                    
+                                    <div class="section-container">
+                                        <a class="overlay-button add-button edit-section"></a>
+                                        <h4>Organizations {{name[0]}} supports</h4>  
+                                        <ul class="browser-default" style="margin-bottom: 0px !important;">
+                                            <li ng-repeat="org in supportedOrganizations">
+                                                <a href="https://www.linkedin.com/vsearch/p?company={{org}}&trk=prof-vol_interests-orgs-link">
+                                                    <span>{{org}}</span><!--
+                                                    --><a class="overlay-button remove-button" style="margin-left: 4px; height: 16px; width: 16px;"></a>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>      
                                 </div>
                             </div>
                             <!--SKILLS SECTION-->
-                            <div class="background-section">
+                            <div class="section-container background-section">
+                                <div class="edit-section">
+                                    <a class="overlay-button add-button"></a>
+                                </div>
                                 <div class="valign-wrapper background-section-header">
                                     <img src=".\images\commons\header-skill.png" class="valign" />
                                     <h3 class="valign">Skills</h3>
@@ -204,28 +241,36 @@
                                             <a class="btn-skill-description" href="https://www.linkedin.com/topic/{{skill.name}}?trk=mprofile_topic">
                                                 {{skill.name}}
                                             </a>
+                                            <a class="overlay-button remove-button" style="margin-left: 4px; width: 24px;"></a>
                                         </div>
                                     </div>
                                     <div id="extra-skills" ng-show="skills.length > 10">
                                         <h5>{{name[0]}} also knows about...</h5>
-                                        <div class="skill-pill" ng-repeat="skill in skills" ng-show="$index >= 10">
+                                        <div class="section-container skill-pill" ng-repeat="skill in skills" ng-show="$index >= 10">
                                             <a class="btn-skill-count waves-effect waves-light btn">{{skill.endorsers}}</a>
-                                            <a class="btn-skill-description" href="https://www.linkedin.com/topic/{{skill.name}}?trk=mprofile_topic">
+                                            <a class="btn-skill-description" style="padding-right: 24px" href="https://www.linkedin.com/topic/{{skill.name}}?trk=mprofile_topic">
                                                 {{skill.name}}
                                             </a>
+                                            <a class="overlay-button edit-section remove-button" style="height: 24px; width: 26px;"></a>
                                         </div>
-                                       
                                     </div>
                                 </div>
                             </div>
                             <!--EDUCATION SECTION-->
-                            <div class="background-section background-last-section">
+                            <div class="section-container background-section background-last-section">
+                                <div class="edit-section">
+                                    <a class="overlay-button add-button"></a>
+                                </div>
                                 <div class="valign-wrapper background-section-header">
                                     <img src=".\images\commons\header-education.png" class="valign" />
                                     <h3 class="valign">Education</h3>
                                 </div>
                                 <div>
-                                    <div class="row info-bar" ng-repeat="edu in education">
+                                    <div class="section-container row info-bar" ng-repeat="edu in education">
+                                        <div class="edit-section">
+                                            <a class="overlay-button edit-button" style="height: 24px; width: 24px;"></a><!--
+                                         --><a class="overlay-button remove-button" style="height: 24px; width: 24px;"></a>
+                                        </div>
                                         <div style="display: inline-block">
                                             <a href="{{edu.url}}" class="info-title">{{edu.name}}</a>
                                             <a class="info-subtitle">Bachelor of Science, Economics</a>
@@ -233,8 +278,8 @@
                                         </div>
                                         <div class="info-logo">
                                             <a href="{{edu.url}}">
-                                               <img src="{{edu.logo}}" height="60" /> 
-                                            </a>              
+                                                <img src="{{edu.logo}}" height="60" />
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
