@@ -1,5 +1,0 @@
-﻿Image Resource lưu local nhưng file json được host trên web nên phải có mạng mới chạy được!
-(Lí do khi gọi $http.get với local directory sẽ bị lỗi cross origin call...)
-
-host tại: http://myjson.com/4g62s
-raw: https://api.myjson.com/bins/4g62s
