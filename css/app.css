@@ -517,7 +517,7 @@ body {
 }
 /**********************************************/
 .overlay-button {
-    display: inline-block;
+    display: none;
     margin-left: 1px;
     vertical-align: bottom;
     padding: 4px;
@@ -565,3 +565,11 @@ body {
 .section-container {
     position: relative;
 }
+/*------------------------*/
+.edit-activator {
+}
+
+.edit-activator:hover > :not(.edit-activator) .overlay-button {
+    display: inline-block;
+}
+
