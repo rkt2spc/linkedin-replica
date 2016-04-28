@@ -10,7 +10,7 @@ appControllers.controller('mainController', ['$scope','$http', '$location', '$an
             $anchorScroll();
             $location.hash(old);
         };
-
+        
         $http.get('data.json').success(function (data) {
             //Read model from json data
             $scope.coverImage = data.coverImg;

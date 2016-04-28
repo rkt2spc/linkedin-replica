@@ -1,0 +1,9 @@
+{
+  "firebase": "1312663webmidterm",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

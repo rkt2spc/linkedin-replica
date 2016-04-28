@@ -637,6 +637,12 @@ body {
     background-image: url('../images/commons/ic_clear_white.png');
 }
 
+#edit-profileImg-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 /*------------------------*/
 .edit-section {
     display: inline-block;

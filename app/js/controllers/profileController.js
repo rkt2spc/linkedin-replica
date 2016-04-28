@@ -3,6 +3,17 @@
  */
 appControllers.controller('profileController', ['$scope',
     function ($scope) {
+        //Edit Profile Image
+        $scope.showProfileImageEdit = false;
+        $scope.profileImageEditShow = function () {
+            $scope.profileImageEdit = $scope.profileImage;
+            $scope.showProfileImageEdit = true;
+        };
+        $scope.profileImageEditConfirm = function () {
+            $scope.profileImage = $scope.profileImageEdit;
+            $scope.showProfileImageEdit = false;
+        };
+
         //Edit Name
         $scope.showNameEdit = false;
         $scope.nameEditShow = function () {

@@ -1,7 +1,20 @@
 <div id="profile-topcard" ng-controller="profileController">
     <!--PROFILE MAIN-->
     <div class="row profile-main">
-        <img class="profile-image col" ng-src="{{profileImage}}" alt="profile-image"/>
+        <div class="profile-image col editBox-container edit-activator">
+            <div class="editBox" ng-show="showProfileImageEdit">
+                <p class="editTitle">Profile Image Url</p>
+                <div style="margin: 6px 0px 12px">
+                    <input type="text" style="width: 100%" ng-model="profileImageEdit">
+                </div>
+                <a class="waves-effect waves-light btn edit-confirm" ng-click="profileImageEditConfirm()">Save</a>
+                <a class="waves-effect waves-light btn edit-cancel" ng-click="showProfileImageEdit=false">Cancel</a>
+            </div>
+            <div>
+                <a id="edit-profileImg-btn" class="overlay-button edit-button" ng-click="profileImageEditShow()" style="height: 28px; width: 28px;"></a>
+                <img style="height: 100%; width: 100%" ng-src="{{profileImage}}" alt="profile-image"/>
+            </div>
+        </div>
         <div class="profile-overview col">
             <!--OVERVIEW TOP SECTION-->
             <div class="overview-info row">
