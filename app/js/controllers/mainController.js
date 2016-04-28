@@ -1,10 +1,16 @@
-var appControllers = angular.module('appControllers', []);
-
-appControllers.controller('mainController', ['$scope','$http',
-    function ($scope, $http) {
+/**
+ * Created by nmtuan on 28-Apr-16.
+ */
+appControllers.controller('mainController', ['$scope','$http', '$location', '$anchorScroll',
+    function ($scope, $http, $location, $anchorScroll) {
         window.sc = $scope;
-        $scope.dummyUrl = "https://google.com";
-    
+        $scope.scrollTo = function (id) {
+            var old = $location.hash();
+            $location.hash(id);
+            $anchorScroll();
+            $location.hash(old);
+        };
+
         $http.get('data.json').success(function (data) {
             //Read model from json data
             $scope.coverImage = data.coverImg;
@@ -15,28 +21,20 @@ appControllers.controller('mainController', ['$scope','$http',
             $scope.isInfluencer = data.isInfluencer;
             $scope.followers = data.followers;
             $scope.profileUrl = data.profileUrl;
-            
+
             $scope.postsUrl = data.postsUrl;
             $scope.posts = data.posts;
             
             $scope.summary = data.summary;
-            
+
             $scope.experience = data.experience;
-            
+            $scope.showExperienceEdit = new Array(data.experience.length).fill(false);
+
             $scope.caredCauses = data.caredCauses;
-            
             $scope.supportedOrganizations = data.supportedOrganizations;
-            
             $scope.skills = data.skills;
-            
+
             $scope.education = data.education;
-            
+            $scope.showEducationEdit = new Array(data.education.length).fill(false);
         });
     }]);
-
-// appControllers.controller('otherController', ['$scope', '$routeParams',
-//     function($scope, $routeParams) {
-//         //RouteParams is what passed 
-//         //in last after the url route
-//         //e.g: /main/:someId -> [:someId]
-//     }]);

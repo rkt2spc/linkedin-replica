@@ -1,22 +1,14 @@
-//Initialize
+//Script-load Utility
+$.loadScript = function (url, callback) {
+    $.ajax({
+        url: url,
+        dataType: 'script',
+        success: callback,
+        async: false
+    });
+}
 
-var linkedInApp = angular.module('linkedInApp', [
-  'ngRoute',
-  'appControllers'
-]);
+//Load managed scripts
+$.loadScript('js/ngApp.js');
+$.loadScript('js/ngControllers.js');
 
-linkedInApp.config(['$routeProvider', 
-    function($routeProvider) {
-        $routeProvider
-            .when('/main', {
-                templateUrl: 'partials/main.html',
-                controller: 'mainController'
-            })
-            // .when('/main/:someId', {
-            //     templateUrl: 'partials/detail.html',
-            //     controller: 'detailController'
-            // })
-            .otherwise({
-                redirectTo: '/main'
-            });
-}]);

@@ -185,127 +185,140 @@
     
     
     "supportedOrganizations": [
-        "Boys & Girls Clubs of the Peninsula",
-        "DonorsChoose.org",
-        "Malaria No More",
-        "Venture For America"
+        {
+            "orgName": "Boys & Girls Clubs of the Peninsula",
+            "orgWebsite": ""
+        },
+        {
+            "orgName": "DonorsChoose.org",
+            "orgWebsite": ""
+        },
+        {
+            "orgName": "Malaria No More",
+            "orgWebsite": ""
+        },
+        {
+            "orgName": "Venture For America",
+            "orgWebsite": ""
+        }
     ],
     
     
     "skills": [
         {
             "name": "Bussiness Strategy",
-            "endorsers": "99+"
+            "endorsers": 110
         },
         {
             "name": "Leadership",
-            "endorsers": "99+"
+            "endorsers": 106
         },
         {
             "name": "Strategy",
-            "endorsers": "99+"
+            "endorsers": 105
         },
         {
             "name": "Entrepreneurship",
-            "endorsers": "99+"
+            "endorsers": 104
         },
         {
             "name": "Product Marketing",
-            "endorsers": "99+"
+            "endorsers": 103
         },
         {
             "name": "Strategic Planning",
-            "endorsers": "99+"
+            "endorsers": 100
         },
         {
             "name": "Executive Managament",
-            "endorsers": "96"
+            "endorsers": 96
         },
         {
             "name": "Product Development",
-            "endorsers": "86"
+            "endorsers": 86
         },
         {
             "name": "Product Management",
-            "endorsers": "75"
+            "endorsers": 75
         },
         {
             "name": "LinkedIn",
-            "endorsers": "73"
+            "endorsers": 73
         },
         {
             "name": "Social Media",
-            "endorsers": "64"
+            "endorsers": 64
         },
         {
             "name": "User Experience",
-            "endorsers": "48"
+            "endorsers": 48
         },
         {
             "name": "Corporate Development",
-            "endorsers": "35"
+            "endorsers": 35
         },
         {
             "name": "Non-profits",
-            "endorsers": "31"
+            "endorsers": 31
         },
         {
             "name": "Analytics",
-            "endorsers": "27"
+            "endorsers": 27
         },
         {
             "name": "Mergers & Acquisitions",
-            "endorsers": "27"
+            "endorsers": 27
         },
         {
             "name": "Team Leadership",
-            "endorsers": "13"
+            "endorsers": 13
         },
         {
             "name": "Thought Leadership",
-            "endorsers": "12"
+            "endorsers": 12
         },
         {
             "name": "Business Operations",
-            "endorsers": "10"
+            "endorsers": 10
         },
         {
             "name": "Leadership Development",
-            "endorsers": "10"
+            "endorsers": 10
         },
         {
             "name": "Nonprofits",
-            "endorsers": "9"
+            "endorsers": 9
         },
         {
             "name": "Mentoring",
-            "endorsers": "8"
+            "endorsers": 8
         },
         {
             "name": "Mobile Applications",
-            "endorsers": "6"
+            "endorsers": 6
         },
         {
             "name": "Motivation",
-            "endorsers": "5"
+            "endorsers": 5
         },
         {
             "name": "Awesomeness",
-            "endorsers": "5"
+            "endorsers": 5
         },
         {
             "name": "Education",
-            "endorsers": "3"
+            "endorsers": 3
         }
     ],
     
     
     "education": [
         {
-            "name": "University of Pennsylvania - The Wharton School",
-            "url": "https://www.linkedin.com/edu/school?id=19329&trk=prof-edu-school-name",
-            "logo": "images/organization-logos/university-pennsylvania.png",
-            "title": "Bachelor of Science, Economics",
+            "schoolName": "University of Pennsylvania - The Wharton School",
+            "schoolUrl": "https://www.linkedin.com/edu/school?id=19329&trk=prof-edu-school-name",
+            "schoolLogo": "images/organization-logos/university-pennsylvania.png",
+            "degree": "Bachelor of Science",
+            "field": "Economics",
             "startPeriod": "1988",
             "endPeriod": "June 1992"        
         }
