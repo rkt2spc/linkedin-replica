@@ -1,7 +1,7 @@
 <div id="profile-topcard" ng-controller="profileController">
     <!--PROFILE MAIN-->
     <div class="row profile-main">
-        <div class="profile-image col editBox-container edit-activator">
+        <div class="profile-image-container col editBox-container edit-activator">
             <div class="editBox" ng-show="showProfileImageEdit">
                 <p class="editTitle">Profile Image Url</p>
                 <div style="margin: 6px 0px 12px">
@@ -12,7 +12,7 @@
             </div>
             <div style="width: 100%; height: 100%; overflow: hidden">
                 <a id="edit-profileImg-btn" class="overlay-button edit-button" ng-click="profileImageEditShow()" style="height: 28px; width: 28px;"></a>
-                <img style="height: 100%; width: 100%" ng-src="{{profileImage}}" alt="profile-image"/>
+                <div id="profile-image" ng-style="{'background-image':'url('+profileImage+')'}"></div>
             </div>
         </div>
         <div class="profile-overview col">
