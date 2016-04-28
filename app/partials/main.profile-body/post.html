@@ -1,0 +1,23 @@
+<div class="card-body">
+    <h2 class="card-title">Posts</h2>
+    <div id="post-content" class="card-content">
+        <div id="post-header">
+            <h4>Published by {{name[0]}}</h4>
+            <a id="see-more" href="{{postsUrl}}" class="valign-wrapper">
+                <span>See more</span>
+                <i class="arrow-right"></i>
+            </a>
+        </div>
+        <div>
+            <div class="post" ng-repeat="p in posts | limitTo: 3">
+                <a href="{{p.url}}">
+                    <img ng-src="{{p.image}}" width="195" height="135"/>
+                </a>
+                <a href="{{p.url}}" class="post-title">
+                    {{p.title}}
+                </a>
+                <span class="post-date">{{p.date}}</span>
+            </div>
+        </div>
+    </div>
+</div>
