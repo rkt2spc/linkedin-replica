@@ -10,7 +10,7 @@
                 <a class="waves-effect waves-light btn edit-confirm" ng-click="profileImageEditConfirm()">Save</a>
                 <a class="waves-effect waves-light btn edit-cancel" ng-click="showProfileImageEdit=false">Cancel</a>
             </div>
-            <div>
+            <div style="width: 100%; height: 100%; overflow: hidden">
                 <a id="edit-profileImg-btn" class="overlay-button edit-button" ng-click="profileImageEditShow()" style="height: 28px; width: 28px;"></a>
                 <img style="height: 100%; width: 100%" ng-src="{{profileImage}}" alt="profile-image"/>
             </div>
