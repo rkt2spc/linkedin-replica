@@ -6,6 +6,7 @@ appControllers.controller('skillsController', ['$scope',
         //Remove Skill
         $scope.removeSkill = function (index) {
             $scope.skills.splice(index, 1);
+            FirebaseAdapter.set('skills', angular.copy($scope.skills));
         };
 
         //Add Skill
@@ -22,6 +23,7 @@ appControllers.controller('skillsController', ['$scope',
                 if ($scope.skillAdd.endorsers > $scope.skills[i].endorsers)
                     break;
             $scope.skills.splice(i, 0, $scope.skillAdd);
+            FirebaseAdapter.set('skills', angular.copy($scope.skills));
             $scope.showSkillAdd = false;
         };
     }]);

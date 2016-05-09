@@ -6,7 +6,7 @@ appControllers.controller('experienceController', ['$scope',
         //Remove Experience
         $scope.removeExperience = function (index) {
             $scope.experience.splice(index, 1);
-            $scope.showExperienceEdit.splice(index, 1);
+            FirebaseAdapter.set('experience', angular.copy($scope.experience));
         };
 
         //Add Experience
@@ -21,7 +21,7 @@ appControllers.controller('experienceController', ['$scope',
         };
         $scope.experienceAddConfirm = function () {
             $scope.experience.push($scope.experienceAdd);
-            $scope.showExperienceEdit.push(false);
+            FirebaseAdapter.set('experience', angular.copy($scope.experience));
             $scope.showExperienceAdd = false;
         };
 
@@ -32,6 +32,6 @@ appControllers.controller('experienceController', ['$scope',
         };
         $scope.experienceEditConfirm = function (index) {
             $scope.experience[index] = $scope.experienceEdit;
-            $scope.showExperienceEdit[index] = false;
+            FirebaseAdapter.set('experience', angular.copy($scope.experience));
         };
     }]);

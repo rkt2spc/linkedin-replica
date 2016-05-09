@@ -9,6 +9,7 @@ $.loadScript = function (url, callback) {
 }
 
 //Load managed scripts
+$.loadScript('js/FirebaseAdapter.js');
 $.loadScript('js/ngApp.js');
 $.loadScript('js/ngControllers.js');
 

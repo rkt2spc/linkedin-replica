@@ -6,7 +6,7 @@ appControllers.controller('educationController', ['$scope',
         //Remove Education
         $scope.removeEducation = function (index) {
             $scope.education.splice(index, 1);
-            $scope.showEducationEdit.splice(index, 1);
+            FirebaseAdapter.set('education', angular.copy($scope.education));
         };
 
         //Add education
@@ -20,7 +20,7 @@ appControllers.controller('educationController', ['$scope',
         };
         $scope.educationAddConfirm = function () {
             $scope.education.push($scope.educationAdd);
-            $scope.showEducationEdit.push(false);
+            FirebaseAdapter.set('education', angular.copy($scope.education));
             $scope.showEducationAdd = false;
         };
 
@@ -31,6 +31,6 @@ appControllers.controller('educationController', ['$scope',
         };
         $scope.educationEditConfirm = function (index) {
             $scope.education[index] = $scope.educationEdit;
-            $scope.showEducationEdit[index] = false;
+            FirebaseAdapter.set('education', angular.copy($scope.education));
         };
     }]);

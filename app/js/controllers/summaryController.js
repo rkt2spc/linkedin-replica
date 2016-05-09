@@ -10,7 +10,7 @@ appControllers.controller('summaryController', ['$scope',
             $scope.showSummaryEdit = true;
         };
         $scope.summaryEditConfirm = function () {
-            $scope.summary = $scope.summaryEdit;
+            FirebaseAdapter.set('summary', angular.copy($scope.summaryEdit));
             $scope.showSummaryEdit = false;
         };
     }]);

@@ -6,6 +6,7 @@ appControllers.controller('supportedOrganizationController', ['$scope',
         //Remove organization
         $scope.removeOrganization = function (index) {
             $scope.supportedOrganizations.splice(index, 1);
+            FirebaseAdapter.set('supportedOrganizations', angular.copy($scope.supportedOrganizations));
         };
 
         //Add organization
@@ -18,6 +19,7 @@ appControllers.controller('supportedOrganizationController', ['$scope',
         };
         $scope.organizationAddConfirm = function () {
             $scope.supportedOrganizations.push($scope.organizationAdd);
+            FirebaseAdapter.set('supportedOrganizations', angular.copy($scope.supportedOrganizations));
             $scope.showOrganizationAdd = false;
         };
     }]);

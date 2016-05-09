@@ -10,7 +10,7 @@ appControllers.controller('profileController', ['$scope',
             $scope.showProfileImageEdit = true;
         };
         $scope.profileImageEditConfirm = function () {
-            $scope.profileImage = $scope.profileImageEdit;
+            FirebaseAdapter.set('profileImg', $scope.profileImageEdit);
             $scope.showProfileImageEdit = false;
         };
 
@@ -24,6 +24,7 @@ appControllers.controller('profileController', ['$scope',
         $scope.nameEditConfirm = function () {
             $scope.name[0] = $scope.firstnameEdit;
             $scope.name[1] = $scope.lastnameEdit;
+            FirebaseAdapter.set('name', angular.copy($scope.name));
             $scope.showNameEdit = false;
         };
 
@@ -34,7 +35,7 @@ appControllers.controller('profileController', ['$scope',
             $scope.showHeadlineEdit = true;
         };
         $scope.headlineEditConfirm = function () {
-            $scope.headline = $scope.headlineEdit;
+            FirebaseAdapter.set('headline', angular.copy($scope.headlineEdit));
             $scope.showHeadlineEdit = false;
         };
 
@@ -48,6 +49,7 @@ appControllers.controller('profileController', ['$scope',
         $scope.demographicEditConfirm = function () {
             $scope.workInfo.area = $scope.workareaEdit;
             $scope.workInfo.industry = $scope.workindustryEdit;
+            FirebaseAdapter.set('workInfo', angular.copy($scope.workInfo));
             $scope.showDemographicEdit = false;
         };
     }]);

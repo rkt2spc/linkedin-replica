@@ -6,6 +6,7 @@ appControllers.controller('caredCausesController', ['$scope',
         //Remove cause
         $scope.removeCause = function (index) {
             $scope.caredCauses.splice(index, 1);
+            FirebaseAdapter.set('caredCauses', angular.copy($scope.caredCauses));
         };
 
         //Add cause
@@ -16,6 +17,7 @@ appControllers.controller('caredCausesController', ['$scope',
         };
         $scope.causeAddConfirm = function () {
             $scope.caredCauses.push($scope.causeAdd);
+            FirebaseAdapter.set('caredCauses', angular.copy($scope.caredCauses));
             $scope.showCauseAdd = false;
         };
     }]);
