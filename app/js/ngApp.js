@@ -13,11 +13,11 @@ linkedInApp.config(['$routeProvider',
                 templateUrl: 'partials/main.html',
                 controller: 'mainController'
             })
-            // .when('/main/:someId', {
-            //     templateUrl: 'partials/detail.html',
-            //     controller: 'detailController'
-            // })
+            .when('/login', {
+                templateUrl: 'partials/login.html',
+                controller: 'loginController'
+            })
             .otherwise({
-                redirectTo: '/main'
+                redirectTo: '/login'
             });
     }]);

@@ -19,6 +19,23 @@ FirebaseAdapter = {
         var ref = (relativeRef != null)? this.rootRef.child(relativeRef) : this.rootRef;
 
         ref.set(value);
+    },
+    
+    signIn : function (userName, password, callback) {
+        this.rootRef.authWithPassword({
+            email: userName,
+            password: password
+        }, callback, {
+            remember: "sessionOnly"
+        });
+    },
+    
+    signUp : function (userName, password, callback) {
+        this.rootRef.createUser({
+            email: userName,
+            password: password
+        }, callback);
     }
-
 }
+
+FirebaseAdapter.setup('https://1312663webmidterm.firebaseio.com/user');

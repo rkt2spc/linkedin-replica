@@ -1,4 +1,5 @@
 var appControllers = angular.module('appControllers', []);
+$.loadScript('js/controllers/loginController.js');
 $.loadScript('js/controllers/mainController.js');
 $.loadScript('js/controllers/profileController.js');
 $.loadScript('js/controllers/summaryController.js');

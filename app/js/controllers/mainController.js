@@ -10,8 +10,7 @@ appControllers.controller('mainController', ['$scope','$http', '$location', '$an
             $anchorScroll();
             $location.hash(old);
         };
-
-        FirebaseAdapter.setup('https://1312663webmidterm.firebaseio.com/user');
+        
         FirebaseAdapter.bind(null, function (snapshot) {
             var data = snapshot.val();
 
